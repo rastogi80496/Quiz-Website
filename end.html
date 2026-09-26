@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizzify — Results</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./app.css" />
+    <link rel="stylesheet" href="./results.css" />
+    <link rel="icon" type="image/jpg" href="./assets/Congo.jpg" />
+  </head>
+  <body>
+    <div class="page">
+      <nav class="nav">
+        <a class="nav-logo" href="./">Quizzify</a>
+        <a class="nav-link" href="./highscores.html">High Scores</a>
+      </nav>
+
+      <div class="page-inner">
+        <div id="end" class="results-page">
+          <div class="results-header">
+            <span id="resultEmoji" class="result-emoji"></span>
+            <h1 id="resultTitle">Quiz Complete!</h1>
+            <p id="resultTopic" class="result-topic"></p>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat-pill">
+              <div id="statCorrect" class="stat-val">0</div>
+              <div class="stat-label">Correct</div>
+            </div>
+            <div class="stat-pill">
+              <div id="statWrong" class="stat-val">0</div>
+              <div class="stat-label">Wrong</div>
+            </div>
+            <div class="stat-pill">
+              <div id="statPoints" class="stat-val">0</div>
+              <div class="stat-label">Points</div>
+            </div>
+          </div>
+
+          <div class="score-card">
+            <div class="score-ring">
+              <svg viewBox="0 0 120 120">
+                <defs>
+                  <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#6366f1" />
+                    <stop offset="100%" stop-color="#22d3ee" />
+                  </linearGradient>
+                </defs>
+                <circle class="score-ring-bg" cx="60" cy="60" r="52" />
+                <circle id="scoreRingFill" class="score-ring-fill" cx="60" cy="60" r="52" />
+              </svg>
+              <div class="score-ring-text">
+                <span id="percentage" class="percentage">0%</span>
+              </div>
+            </div>
+            <div class="score-details">
+              <p id="scoreSummary" class="score-summary"></p>
+              <p id="performanceMsg" class="performance-msg"></p>
+            </div>
+          </div>
+
+          <details class="review-section" id="reviewSection">
+            <summary>Review Your Answers</summary>
+            <ul id="answerReview" class="answer-review"></ul>
+          </details>
+
+          <form class="save-form">
+            <input type="text" id="username" placeholder="Enter your name to save score" />
+            <button type="submit" class="btn btn-primary" id="saveScoreBtn" onclick="saveHighScore(event)" disabled>
+              Save to Leaderboard
+            </button>
+          </form>
+
+          <div class="results-actions">
+            <a class="btn btn-primary" href="./">Play Again</a>
+            <a class="btn btn-secondary" href="./highscores.html">View High Scores</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./end.js"></script>
+  </body>
+</html>

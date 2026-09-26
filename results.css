@@ -1,0 +1,246 @@
+.results-page {
+  width: 100%;
+  max-width: 64rem;
+  animation: pageEnter 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.results-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.result-emoji {
+  font-size: 5.6rem;
+  display: block;
+  margin-bottom: 1.2rem;
+  animation: fadeUp 0.5s ease both;
+}
+
+#resultTitle {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  margin-bottom: 0.8rem;
+}
+
+.result-topic {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.5rem 1.4rem;
+  border-radius: 2rem;
+}
+
+.score-card {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 3rem;
+  border-radius: var(--radius);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.score-ring {
+  position: relative;
+  width: 13rem;
+  height: 13rem;
+  flex-shrink: 0;
+}
+
+.score-ring svg {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.score-ring-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 8;
+}
+
+.score-ring-fill {
+  fill: none;
+  stroke: url(#scoreGradient);
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 326.73;
+  stroke-dashoffset: 326.73;
+  transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.score-ring-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.percentage {
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.score-details {
+  flex: 1;
+}
+
+.score-summary {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: var(--text);
+}
+
+.performance-msg {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.stats-row {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-pill {
+  flex: 1;
+  min-width: 10rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.4rem;
+  text-align: center;
+}
+
+.stat-pill .stat-val {
+  font-size: 2.4rem;
+  font-weight: 800;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-pill .stat-label {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 0.3rem;
+}
+
+.review-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0;
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+}
+
+.review-section summary {
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text);
+  padding: 1.6rem 2rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background var(--transition);
+  user-select: none;
+}
+
+.review-section summary:hover {
+  background: var(--surface-hover);
+}
+
+.review-section summary::-webkit-details-marker {
+  display: none;
+}
+
+.review-section summary::after {
+  content: '▼';
+  font-size: 1rem;
+  color: var(--text-muted);
+  transition: transform var(--transition);
+}
+
+.review-section[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.answer-review {
+  list-style: none;
+  max-height: 32rem;
+  overflow-y: auto;
+  border-top: 1px solid var(--border);
+  padding: 0 2rem;
+}
+
+.answer-review li {
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 1.4rem;
+  animation: fadeUp 0.3s ease both;
+}
+
+.answer-review li:last-child {
+  border-bottom: none;
+}
+
+.review-q {
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: var(--text);
+  line-height: 1.45;
+}
+
+.review-answer {
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.review-answer.correct-ans {
+  color: var(--success);
+}
+
+.review-answer.wrong-ans {
+  color: var(--error);
+}
+
+.save-form {
+  margin-bottom: 2rem;
+}
+
+.results-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .score-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    gap: 2rem;
+  }
+}

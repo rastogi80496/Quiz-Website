@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizzify — Interview Practice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://generativelanguage.googleapis.com" />
+    <link rel="stylesheet" href="./app.css" />
+    <link rel="stylesheet" href="./topics.css" />
+    <link rel="icon" type="image/jpg" href="./assets/logo.jpg" />
+  </head>
+  <body>
+    <div class="page">
+      <nav class="nav">
+        <a class="nav-logo" href="./">Quizzify</a>
+        <a class="nav-link" href="./highscores.html">High Scores</a>
+      </nav>
+
+      <div class="page-inner">
+        <div id="home" class="home">
+          <header class="home-header">
+            <span class="badge">✦ AI-Powered · Top 10 Questions</span>
+            <h1>Prepare for Your Interview</h1>
+            <p class="subtitle">
+              Choose a role and practise ten high-impact interview questions, generated fresh by Gemini AI.
+            </p>
+          </header>
+
+          <section class="topic-section">
+            <h2>Choose Your Interview Track</h2>
+            <div id="topicGrid" class="topic-grid"></div>
+          </section>
+
+          <div class="home-actions">
+            <p id="prefetchStatus" class="prefetch-status"></p>
+            <button id="startBtn" class="btn btn-primary" disabled>
+              Start Practice <span class="btn-icon">→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./config.js"></script>
+    <script src="./topics.js"></script>
+    <script src="./quiz-api.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

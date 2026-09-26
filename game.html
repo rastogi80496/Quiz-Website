@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizzify — Interview Practice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./app.css" />
+    <link rel="stylesheet" href="./game.css" />
+    <link rel="icon" type="image/jpg" href="./assets/play.jpg" />
+  </head>
+  <body>
+    <div class="page">
+      <nav class="nav">
+        <a class="nav-logo" href="./">Quizzify</a>
+        <span id="topicBadge" class="topic-badge"></span>
+      </nav>
+
+      <div class="page-inner">
+        <div id="loader" class="loader-screen">
+          <div class="loader-visual">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+          </div>
+          <p id="loaderText" class="loader-text">Generating your quiz...</p>
+          <p id="loaderSubtext" class="loader-subtext"></p>
+          <div class="loader-progress">
+            <div id="loaderProgressBar" class="loader-progress-bar"></div>
+          </div>
+          <div class="loader-steps">
+            <div class="loader-step" data-step="1"></div>
+            <div class="loader-step" data-step="2"></div>
+            <div class="loader-step" data-step="3"></div>
+          </div>
+        </div>
+
+        <div id="errorScreen" class="error-screen hidden">
+          <div class="error-icon">⚠️</div>
+          <h2>Something went wrong</h2>
+          <p id="errorMessage"></p>
+          <a class="btn btn-primary" href="./">Back to Topics</a>
+        </div>
+
+        <div id="game" class="game-wrap hidden">
+          <div class="game-card">
+            <div class="game-top">
+              <div id="hud-item">
+                <p class="hud-prefix">Progress</p>
+                <div id="progressBar">
+                  <div id="progressBarFull"></div>
+                </div>
+                <p id="progressText">Question 1 of 10</p>
+              </div>
+              <div id="hud-item">
+                <p class="hud-prefix">Score</p>
+                <h1 class="hud-main-text" id="score">0</h1>
+              </div>
+            </div>
+
+            <div class="question-area">
+              <h2 id="question" class="question-text"></h2>
+            </div>
+
+            <div id="choices">
+              <div class="choice-container" data-number="1">
+                <p class="choice-prefix">A</p>
+                <p class="choice-text" data-number="1"></p>
+              </div>
+              <div class="choice-container" data-number="2">
+                <p class="choice-prefix">B</p>
+                <p class="choice-text" data-number="2"></p>
+              </div>
+              <div class="choice-container" data-number="3">
+                <p class="choice-prefix">C</p>
+                <p class="choice-text" data-number="3"></p>
+              </div>
+              <div class="choice-container" data-number="4">
+                <p class="choice-prefix">D</p>
+                <p class="choice-text" data-number="4"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./config.js"></script>
+    <script src="./topics.js"></script>
+    <script src="./quiz-api.js"></script>
+    <script src="./game.js"></script>
+  </body>
+</html>
